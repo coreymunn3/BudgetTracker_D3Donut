@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <title>Budget Planner</title>
+  <style>
+    .tip {
+      padding: 0.5rem;
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+    }
+    .tip .delete {
+      color: red;
+      font-size: 0.8rem;
+    }
+  </style>
+</head>
+<body class="indigo">
+  <header class="indigo darken-1 section">
+    <h2 class="center white-text">Budget App</h2>
+    <p class="flow-text grey-text center text-lighten-2">Monthly Money Tracker</p>
+  </header>
+
+  <main>
+    <div class="container section">
+      <div class="row">
+        <!-- left side (input form) -->
+        <div class="col s12 m6">
+          <div class="card">
+            <div class="card-content">
+              <form class="card z-depth-0">
+                <h6 class="card-title indigo-text">Add Item:</h6>
+                <div class="input-field">
+                  <input type="text" id="name">
+                  <label for="name">Item Name</label>
+                </div>
+                <div class="input-field">
+                  <input type="text" id="cost">
+                  <label for="cost">Item Cost</label>
+                </div>
+                <div class="input-field center">
+                  <button class="btn-large">Add Item</button>
+                </div>
+                <div class="input-field center">
+                  <div id="error">
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+          
+        </div>
+        <!-- right side (graph)-->
+        <div class="col s12 m6">
+          <div class="canvas"></div>
+        </div>
+      </div>
+    </div>
+  </main>
+  
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-firestore.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyDNj3echeUEQP-Pezl2y2tsLERFHJtgD_Q",
+    authDomain: "d3-firebase-testing.firebaseapp.com",
+    databaseURL: "https://d3-firebase-testing.firebaseio.com",
+    projectId: "d3-firebase-testing",
+    storageBucket: "d3-firebase-testing.appspot.com",
+    messagingSenderId: "356379319260",
+    appId: "1:356379319260:web:c92e6ba6c9656da7eb0d19"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  const db = firebase.firestore()
+</script>
+  <!-- D3 link -->
+  <script src="https://d3js.org/d3.v5.js"></script>
+  <!-- Compiled and minified JavaScript for Materialize-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <!-- D3 legend plugin -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.25.6/d3-legend.min.js"></script>
+  <!-- D3 tooltip plugin -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.9.1/d3-tip.js"></script>
+  <!-- Javascript & D3 app files -->
+  <script src="ui.js"></script>
+  <script src="index.js"></script>
+  <script src="graph.js"></script>
+
+  
+</body>
+</html>
